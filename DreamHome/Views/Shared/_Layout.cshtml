@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Dream Home</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar navbar-inverse  navbar-dark bg-dark navbar-fixed-top" id="menu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dream Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Add House", "RegisterHouses", "houses")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Luis Miguel Castro</p>
+        </footer>
+    </div>
+    <script src="https://kit.fontawesome.com/a192df40a8.js" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        window.addEventListener("scroll", cambiarColor);
+
+
+        function cambiarColor() {
+
+            let menu = document.getElementById("menu");
+            console.log(document.documentElement.scrollTop);
+
+            if (document.body.scrollTop || document.documentElement.scrollTop <= 400) {
+
+                menu.classList.add("bg-dark");
+                menu.classList.remove("fondo2");
+
+
+            } else {
+                menu.classList.add("fondo2");
+                menu.classList.remove("bg-dark");
+            }
+
+
+        }
+    </script>
+
+    <style>
+
+
+        .fondo2 {
+            background-color: #3D3F40;
+        }
+
+        .navbar {
+            position: fixed;
+            border: none;
+            font-family: 'Outfit', sans-serif;
+           
+        }
+
+        .linea{
+            width: 70%;
+        }
+        .navbar-header .navbar-brand {
+            color: #00ffff;
+            text-shadow: 2px 2px 5px #00ffff;
+            font-size: 22px;
+            padding-left: 80px;
+        }
+
+            .navbar-header .navbar-brand:hover {
+                color: #fff;
+                text-shadow: 2px 2px 5px #fff;
+            }
+
+
+        .navbar-inverse .nav li a {
+            color: #fff;
+            font-size: 22px;
+            text-shadow: 2px 2px 5px #fff;
+            padding-right: 50px;
+        }
+
+            .navbar-inverse .nav li a:hover {
+                color: #00ffff;
+                text-shadow: 2px 2px 5px #00ffff;
+                text-decoration: underline wavy #00ffff;
+            }
+
+
+
+        .nav {
+            color: #fff;
+            
+        }
+
+        footer {
+            text-align: center;
+        }
+
+
+    </style>
+</body>
+</html>

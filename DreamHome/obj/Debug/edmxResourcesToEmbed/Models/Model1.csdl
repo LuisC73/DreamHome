@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="homedreamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="houses">
+    <Key>
+      <PropertyRef Name="id_house" />
+    </Key>
+    <Property Name="id_house" Type="Int32" Nullable="false" />
+    <Property Name="nameHouse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nameSeller" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="Int32" />
+    <Property Name="ubication" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="size" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rooms" Type="Int32" />
+    <Property Name="bathrooms" Type="Int32" />
+    <Property Name="garages" Type="Int32" />
+    <Property Name="photoHouse" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="active" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="homedreamEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="houses" EntityType="Self.houses" />
+  </EntityContainer>
+</Schema>
