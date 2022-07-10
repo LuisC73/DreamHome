@@ -15,6 +15,6 @@
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/LuisC73/Portafolio.git
+$ git clone https://github.com/LuisC73/DreamHome.git
 
 ```
